@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    webhost-lab:
+        image: nginx
+        ports:
+            - "9000:90"
+        volumes:
+            - ./config/:/etc/nginx/
+            - ./src:/app/src # /apps will be in root directory
