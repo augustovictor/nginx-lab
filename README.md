@@ -32,7 +32,8 @@ Ps: `/etc/init.d` is where init scripts for linux server lives.
 - `/var/log/nginx/accessl.log` - Nginx log
 
 # Definitions
-### Contexts: Sections in config file where directives can be applied to. Structure: `context_name { ... }`
+### Contexts: 
+Sections in config file where directives can be applied to. Structure: `context_name { ... }`
 - Main context: Where options for the master process get set. E.g., `worker_processes 1`;
 - `http`: Where we specify anything http related;
 - `server`: Equivalent to apache vhost (virtual host);
@@ -49,6 +50,7 @@ Ps: `/etc/init.d` is where init scripts for linux server lives.
             - Does not match: `/greeting`
         - Preferential prefix: It works the same way `prefix` but with higher priority than regex match. E.g., `location ^~ /greet`
     - Maching priority order:
+    
         Order | Name | Modifier
         ---|---|---
         1 | Exact match | `=`
@@ -56,7 +58,8 @@ Ps: `/etc/init.d` is where init scripts for linux server lives.
         3 | Regex match | `~` or `~*`
         4 | No modifier | ` `
 - `types`: Nginx will serve static files as `text/plain`. To get files being served the right format we should use this context;
-### Directives: Specific configuration options set in config file. Structure: `opt_name opt_value`
+### Directives:
+Specific configuration options set in config file. Structure: `opt_name opt_value`
 - `include`: Imports a file from `/etc/nginx`. E.g., `include mime.types`;
 
 ## Logging
