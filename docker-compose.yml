@@ -8,3 +8,8 @@ services:
         volumes:
             - ./config/:/etc/nginx/
             - ./src:/app/src # /apps will be in root directory
+        links:
+            - node-books
+    node-books:
+        container_name: node-books
+        image: victoraweb/node-books
